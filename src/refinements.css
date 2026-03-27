@@ -1,0 +1,74 @@
+/* Premium UI Refinements */
+
+.project-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid #edf2f7 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 12px 24px -8px rgba(49, 130, 206, 0.25) !important;
+  border-color: #bee3f8 !important;
+}
+
+.active-card {
+  background: linear-gradient(145deg, #ebf8ff 0%, #ffffff 100%) !important;
+  border-left: 4px solid #3182ce !important;
+  box-shadow: 0 8px 16px -4px rgba(49, 130, 206, 0.15) !important;
+}
+
+.smart-stats-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+.project-search input {
+  transition: all 0.2s ease;
+}
+
+.project-search input:focus {
+  outline: none !important;
+  border-color: #3182ce !important;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2) !important;
+  background-color: #ffffff !important;
+}
+
+.details-main-col, .details-side-col, .dashboard-section {
+  animation: fadeUpModern 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.details-side-col {
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeUpModern {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.action-button.primary-action {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.action-button.primary-action:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px -6px rgba(221, 107, 32, 0.5) !important;
+}
+
+/* Enhancing map popups */
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e2e8f0;
+}
