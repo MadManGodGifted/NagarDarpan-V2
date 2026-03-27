@@ -34,10 +34,8 @@ function Dashboard() {
     }
   }, [isLocating, showLoading]);
 
-  const activeCenter = useMemo(() => {
-    if (activeProject) return [activeProject.lat, activeProject.lng];
-    return userLocation; // Could be null before location resolves
-  }, [activeProject, userLocation]);
+  // Prevent map from shifting automatically when user clicks a project
+  const activeCenter = userLocation; 
 
   const filteredProjects = useMemo(() => {
     if (!activeCenter) return [];
@@ -53,15 +51,15 @@ function Dashboard() {
     return filtered;
   }, [filter, projectsData, activeCenter]);
 
-  const handleFilterClick = (f) => {
+  const handleFilterClick = useCallback((f) => {
     setFilter(f);
     setActiveProject(null);
-  };
+  }, []);
 
-  const handleProjectClick = (project) => {
+  const handleProjectClick = useCallback((project) => {
     setActiveProject(project);
     setIsMobileListOpen(true);
-  };
+  }, []);
 
   const resetTargetRegion = () => {
     setActiveProject(null);

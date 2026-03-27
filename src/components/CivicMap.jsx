@@ -7,9 +7,12 @@ import L from 'leaflet';
 
 function MapController({ center, zoom }) {
   const map = useMap();
-  useEffect(() => {
-    if (center && map) {
+  const isInitial = React.useRef(true);
+  
+  React.useEffect(() => {
+    if (center && map && isInitial.current) {
       map.flyTo(center, zoom, { duration: 1.2 });
+      isInitial.current = false;
     }
   }, [center, zoom, map]);
 
