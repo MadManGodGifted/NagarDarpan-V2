@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useContext, useEffect } from 'react';
+import React, { useState, useMemo, useContext, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import CivicMap from '../components/CivicMap';
